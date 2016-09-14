@@ -1,0 +1,7 @@
+DEVICE=em4
+ONBOOT=yes
+BOOTPROTO=none
+TYPE=OVSPort
+VLAN=yes
+OVS_BRIDGE=br-ex
+HWADDR=14:fe:b5:db:76:7c

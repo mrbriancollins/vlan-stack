@@ -1,0 +1,118 @@
+<!--
+WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
+OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
+  virsh edit instance-00000042
+or other application using the libvirt API.
+-->
+
+<domain type='kvm'>
+  <name>instance-00000042</name>
+  <uuid>88b1a0b0-db88-46ed-9f8d-be2aeda4164d</uuid>
+  <metadata>
+    <nova:instance xmlns:nova="http://openstack.org/xmlns/libvirt/nova/1.0">
+      <nova:package version="13.1.0-1.el7"/>
+      <nova:name>test</nova:name>
+      <nova:creationTime>2016-09-12 19:59:53</nova:creationTime>
+      <nova:flavor name="RWB.default">
+        <nova:memory>6144</nova:memory>
+        <nova:disk>0</nova:disk>
+        <nova:swap>8192</nova:swap>
+        <nova:ephemeral>0</nova:ephemeral>
+        <nova:vcpus>3</nova:vcpus>
+      </nova:flavor>
+      <nova:owner>
+        <nova:user uuid="9eeb17ad53314daba698051d48949009">bcollins</nova:user>
+        <nova:project uuid="7cdd9e1410a94aebbefa58e1cedc936e">RWB_Instances</nova:project>
+      </nova:owner>
+    </nova:instance>
+  </metadata>
+  <memory unit='KiB'>6291456</memory>
+  <currentMemory unit='KiB'>6291456</currentMemory>
+  <vcpu placement='static'>3</vcpu>
+  <cputune>
+    <shares>3072</shares>
+  </cputune>
+  <sysinfo type='smbios'>
+    <system>
+      <entry name='manufacturer'>Fedora Project</entry>
+      <entry name='product'>OpenStack Nova</entry>
+      <entry name='version'>13.1.0-1.el7</entry>
+      <entry name='serial'>118a648a-1230-4e0c-ab43-6a1697e2941c</entry>
+      <entry name='uuid'>88b1a0b0-db88-46ed-9f8d-be2aeda4164d</entry>
+      <entry name='family'>Virtual Machine</entry>
+    </system>
+  </sysinfo>
+  <os>
+    <type arch='x86_64' machine='pc-i440fx-rhel7.2.0'>hvm</type>
+    <boot dev='hd'/>
+    <smbios mode='sysinfo'/>
+  </os>
+  <features>
+    <acpi/>
+    <apic/>
+  </features>
+  <cpu mode='host-model'>
+    <model fallback='allow'/>
+    <topology sockets='3' cores='1' threads='1'/>
+  </cpu>
+  <clock offset='utc'>
+    <timer name='pit' tickpolicy='delay'/>
+    <timer name='rtc' tickpolicy='catchup'/>
+    <timer name='hpet' present='no'/>
+  </clock>
+  <on_poweroff>destroy</on_poweroff>
+  <on_reboot>restart</on_reboot>
+  <on_crash>destroy</on_crash>
+  <devices>
+    <emulator>/usr/libexec/qemu-kvm</emulator>
+    <disk type='file' device='disk'>
+      <driver name='qemu' type='raw' cache='none'/>
+      <source file='/var/lib/nova/mnt/96cee0347ebad431ec6a9adc9cc67830/volume-c60c5410-3c8b-435e-ae93-755f40075723'/>
+      <target dev='vda' bus='virtio'/>
+      <serial>c60c5410-3c8b-435e-ae93-755f40075723</serial>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x04' function='0x0'/>
+    </disk>
+    <disk type='file' device='disk'>
+      <driver name='qemu' type='qcow2' cache='none'/>
+      <source file='/var/lib/nova/instances/88b1a0b0-db88-46ed-9f8d-be2aeda4164d/disk.swap'/>
+      <target dev='vdb' bus='virtio'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0'/>
+    </disk>
+    <controller type='usb' index='0'>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x2'/>
+    </controller>
+    <controller type='pci' index='0' model='pci-root'/>
+    <interface type='bridge'>
+      <mac address='fa:16:3e:57:c7:80'/>
+      <source bridge='qbrdedbdfd7-96'/>
+      <target dev='tapdedbdfd7-96'/>
+      <model type='virtio'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
+    </interface>
+    <serial type='file'>
+      <source path='/var/lib/nova/instances/88b1a0b0-db88-46ed-9f8d-be2aeda4164d/console.log'/>
+      <target port='0'/>
+    </serial>
+    <serial type='pty'>
+      <target port='1'/>
+    </serial>
+    <console type='file'>
+      <source path='/var/lib/nova/instances/88b1a0b0-db88-46ed-9f8d-be2aeda4164d/console.log'/>
+      <target type='serial' port='0'/>
+    </console>
+    <input type='tablet' bus='usb'/>
+    <input type='mouse' bus='ps2'/>
+    <input type='keyboard' bus='ps2'/>
+    <graphics type='vnc' port='-1' autoport='yes' listen='0.0.0.0' keymap='en-us'>
+      <listen type='address' address='0.0.0.0'/>
+    </graphics>
+    <video>
+      <model type='cirrus' vram='16384' heads='1'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x0'/>
+    </video>
+    <memballoon model='virtio'>
+      <stats period='10'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x06' function='0x0'/>
+    </memballoon>
+  </devices>
+</domain>

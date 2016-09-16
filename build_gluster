@@ -1,0 +1,16 @@
+echo "#BUILD GLUSTER"
+for i in `cat servers | grep -v plat`; do ssh $i "yum install -y centos-release-gluster38" ;done
+for i in `cat servers | grep -v plat`; do ssh $i "yum instal l -y glusterfs{,-server,-fuse,-geo-replication}" ;done
+for i in `cat servers | grep -v plat`; do ssh $i "mkfs.xfs -f -i size=512 /dev/sdb" ;done
+for i in `cat servers | grep -v plat`; do ssh $i "mkdir -p /export/sdb; mount /dev/sdb /export/sdb; mkdir -p /export/sdb/brick" ;done
+for i in `cat servers | grep -v plat`; do ssh $i '( echo "/dev/sdb /export/sdb xfs noatime,nodiratime,nobarrier,logbufs=8 0 0" >> /etc/fstab )' ;done
+for i in `cat servers | grep -v plat`; do echo $i ; ssh $i "systemctl enable glusterd" ;done
+for i in `cat servers | grep -v plat`; do echo $i ; ssh $i "service glusterd start" ;done
+for i in `cat servers | grep -v plat`; do echo $i; ssh $i '(for i in 10.1.13.1{1..4} ;do gluster peer probe $i ;done)' ;done
+for i in `cat servers | grep stack1 `; do echo $i; ssh $i '(gluster volume create conversion 10.1.13.11:/export/sdb/conversion 10.1.13.12:/export/sdb/conversion 10.1.13.13:/export/sdb/conversion 10.1.13.14:/export/sdb/conversion)' ;done
+for i in `cat servers | grep stack1 `; do echo $i; ssh $i '(gluster volume create cinder 10.1.13.11:/export/sdb/cinder 10.1.13.12:/export/sdb/cinder 10.1.13.13:/export/sdb/cinder 10.1.13.14:/export/sdb/cinder)' ;done
+for i in `cat servers | grep stack1 `; do echo $i; ssh $i '(gluster volume create vmigrate 10.1.13.11:/export/sdb/vmigrate 10.1.13.12:/export/sdb/vmigrate 10.1.13.13:/export/sdb/vmigrate 10.1.13.14:/export/sdb/vmigrate)' ;done
+for i in `cat servers | grep stack1 `; do echo $i; ssh $i '(gluster volume create nova 10.1.13.11:/export/sdb/nova 10.1.13.12:/export/sdb/nova 10.1.13.13:/export/sdb/nova 10.1.13.14:/export/sdb/nova)' ;done
+for i in `cat servers | grep stack1 `; do echo $i; ssh $i '(gluster volume create backup 10.1.13.11:/export/sdb/backup 10.1.13.12:/export/sdb/backup 10.1.13.13:/export/sdb/backup 10.1.13.14:/export/sdb/backup)' ;done
+for i in `cat servers | grep stack1 `; do echo $i; ssh $i '(for i in `gluster volume list` ;do gluster volume start $i ;done)' ;done
+echo "GLUSTER BUILT#"

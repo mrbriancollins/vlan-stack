@@ -1,0 +1,9 @@
+echo "#Map NOVA Compute For Live Migrate"
+for i in `cat servers`; do echo $i; ssh $i '(mv /var/lib/nova /var/lib/nova2)' ;done
+for i in `cat servers`; do echo $i; ssh $i '(echo "10.1.13.5:/mnt/DATA/openstack/nova        /var/lib/nova   nfs     defaults        0 0" >> /etc/fstab)' ;done
+for i in `cat servers`; do echo $i; ssh $i '(mkdir /var/lib/nova)' ;done
+for i in `cat servers`; do echo $i; ssh $i '(mount -a)' ;done
+for i in `cat servers`; do echo $i; ssh $i '(chown -R nova: /var/lib/nova)' ;done
+for i in `cat servers`; do echo $i; ssh $i '(cp -Rp /var/lib/nova2/* /var/lib/nova/)' ;done
+for i in `cat servers`; do echo $i; ssh $i '(ls -al /var/lib/nova)' ;done
+echo "NOVA Compute Live Migration Enabled#"

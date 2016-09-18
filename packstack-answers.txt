@@ -57,14 +57,14 @@ CONFIG_GNOCCHI_INSTALL=n
 CONFIG_SAHARA_INSTALL=n
 
 # Specify 'y' to install OpenStack Orchestration (heat). ['y', 'n']
-CONFIG_HEAT_INSTALL=n
+CONFIG_HEAT_INSTALL=y
 
 # Specify 'y' to install OpenStack Database (trove) ['y', 'n']
 CONFIG_TROVE_INSTALL=n
 
 # Specify 'y' to install OpenStack Bare Metal Provisioning (ironic).
 # ['y', 'n']
-CONFIG_IRONIC_INSTALL=y
+CONFIG_IRONIC_INSTALL=n
 
 # Specify 'y' to install the OpenStack Client packages (command-line
 # tools). An admin "rc" file will also be installed. ['y', 'n']
@@ -697,11 +697,11 @@ CONFIG_CINDER_NETAPP_STORAGE_POOLS=
 
 # Password to use for OpenStack Bare Metal Provisioning (ironic) to
 # access the database.
-CONFIG_IRONIC_DB_PW=polaris
+CONFIG_IRONIC_DB_PW=PW_PLACEHOLDER
 
 # Password to use for OpenStack Bare Metal Provisioning to
 # authenticate with the Identity service.
-CONFIG_IRONIC_KS_PW=polaris
+CONFIG_IRONIC_KS_PW=PW_PLACEHOLDER
 
 # Enter y if cron job for removing soft deleted DB rows should be
 # created.
@@ -1125,22 +1125,22 @@ CONFIG_SWIFT_STORAGE_FSTYPE=ext4
 # Custom seed number to use for swift_hash_path_suffix in
 # /etc/swift/swift.conf. If you do not provide a value, a seed number
 # is automatically generated.
-CONFIG_SWIFT_HASH=799391ffb77c4a42
+CONFIG_SWIFT_HASH=aaac0137ded74374
 
 # Size of the Object Storage loopback file storage device.
 CONFIG_SWIFT_STORAGE_SIZE=2G
 
 # Password used by Orchestration service user to authenticate against
 # the database.
-CONFIG_HEAT_DB_PW=PW_PLACEHOLDER
+CONFIG_HEAT_DB_PW=polaris
 
 # Encryption key to use for authentication in the Orchestration
 # database (16, 24, or 32 chars).
-CONFIG_HEAT_AUTH_ENC_KEY=2b7e47fe1ecb401f
+CONFIG_HEAT_AUTH_ENC_KEY=d4d22fa654bb4b7b
 
 # Password to use for the Orchestration service to authenticate with
 # the Identity service.
-CONFIG_HEAT_KS_PW=PW_PLACEHOLDER
+CONFIG_HEAT_KS_PW=polaris
 
 # Specify 'y' to install the Orchestration CloudWatch API. ['y', 'n']
 CONFIG_HEAT_CLOUDWATCH_INSTALL=n
@@ -1157,7 +1157,7 @@ CONFIG_HEAT_DOMAIN_ADMIN=heat_admin
 
 # Password for the Identity domain administrative user for
 # Orchestration.
-CONFIG_HEAT_DOMAIN_PASSWORD=PW_PLACEHOLDER
+CONFIG_HEAT_DOMAIN_PASSWORD=polaris
 
 # Specify 'y' to provision for demo usage and testing. ['y', 'n']
 CONFIG_PROVISION_DEMO=y
@@ -1223,7 +1223,7 @@ CONFIG_GNOCCHI_DB_PW=PW_PLACEHOLDER
 CONFIG_GNOCCHI_KS_PW=PW_PLACEHOLDER
 
 # Secret key for signing Telemetry service (ceilometer) messages.
-CONFIG_CEILOMETER_SECRET=72719528650d406e
+CONFIG_CEILOMETER_SECRET=941dc690dea2426e
 
 # Password to use for Telemetry to authenticate with the Identity
 # service.

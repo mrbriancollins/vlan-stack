@@ -1,0 +1,75 @@
++---------------------------+--------------------------------------+
+| Field                     | Value                                |
++---------------------------+--------------------------------------+
+| admin_state_up            | True                                 |
+| availability_zone_hints   |                                      |
+| availability_zones        | nova                                 |
+| created_at                | 2016-09-16T05:39:14                  |
+| description               |                                      |
+| id                        | f16f8b83-5e5c-49f2-8e68-cbd504d120a3 |
+| ipv4_address_scope        |                                      |
+| ipv6_address_scope        |                                      |
+| is_default                | False                                |
+| mtu                       | 1500                                 |
+| name                      | polaris_external_999                 |
+| provider:network_type     | flat                                 |
+| provider:physical_network | br-ex                                |
+| provider:segmentation_id  |                                      |
+| router:external           | True                                 |
+| shared                    | True                                 |
+| status                    | ACTIVE                               |
+| subnets                   | d853880d-c7d6-45ce-ab42-95214fbf2c04 |
+| tags                      |                                      |
+| tenant_id                 | fd21daf0c13a41438d4d7ffb465ddaf1     |
+| updated_at                | 2016-09-16T05:39:14                  |
++---------------------------+--------------------------------------+
++---------------------------+--------------------------------------+
+| Field                     | Value                                |
++---------------------------+--------------------------------------+
+| admin_state_up            | True                                 |
+| availability_zone_hints   |                                      |
+| availability_zones        | nova                                 |
+| created_at                | 2016-09-16T05:39:05                  |
+| description               |                                      |
+| id                        | fd27692c-8998-4ce7-84f0-169a7ea4c4fa |
+| ipv4_address_scope        |                                      |
+| ipv6_address_scope        |                                      |
+| is_default                | False                                |
+| mtu                       | 1500                                 |
+| name                      | polaris_external_15                  |
+| provider:network_type     | flat                                 |
+| provider:physical_network | br-15                                |
+| provider:segmentation_id  |                                      |
+| router:external           | True                                 |
+| shared                    | True                                 |
+| status                    | ACTIVE                               |
+| subnets                   | e3a4fcd2-82f5-4e83-984c-032003431f4e |
+| tags                      |                                      |
+| tenant_id                 | fd21daf0c13a41438d4d7ffb465ddaf1     |
+| updated_at                | 2016-09-16T05:39:05                  |
++---------------------------+--------------------------------------+
++---------------------------+--------------------------------------+
+| Field                     | Value                                |
++---------------------------+--------------------------------------+
+| admin_state_up            | True                                 |
+| availability_zone_hints   |                                      |
+| availability_zones        | nova                                 |
+| created_at                | 2016-09-16T05:38:54                  |
+| description               |                                      |
+| id                        | 8173379e-c848-4353-8b2b-361acbe0da22 |
+| ipv4_address_scope        |                                      |
+| ipv6_address_scope        |                                      |
+| is_default                | False                                |
+| mtu                       | 1500                                 |
+| name                      | polaris_external_10                  |
+| provider:network_type     | flat                                 |
+| provider:physical_network | br-10                                |
+| provider:segmentation_id  |                                      |
+| router:external           | True                                 |
+| shared                    | True                                 |
+| status                    | ACTIVE                               |
+| subnets                   | e0d33ab9-586d-40e5-aae4-00c1d2642b81 |
+| tags                      |                                      |
+| tenant_id                 | fd21daf0c13a41438d4d7ffb465ddaf1     |
+| updated_at                | 2016-09-16T05:38:54                  |
++---------------------------+--------------------------------------+
